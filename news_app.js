@@ -20,7 +20,7 @@ $(document).ready(function(){
 				$.each($("input[type='checkbox']:checked"), function(){
 					clicked.push($(this).val());
 				});
-				$('.card').empty();
+				$('.card').unshift();
 				for(var k = 0; k<clicked.length; k++){
 					var indUrl= "https://newsapi.org/v1/articles?source="+clicked[k]+"&sortBy=top&apiKey=e90c70d754bc433e897fcb3c83336f02";
 					$.ajax({
