@@ -11,7 +11,8 @@ $(document).ready(function(){
 			for (var i = 0; i < info.sources.length; i++) {
 				var nameChannel = info.sources[i].name;
 				idChannel=info.sources[i].id;
-				newTable='<tr><td><input type="checkbox" name="'+ nameChannel +'" value="'+ info.sources[i].id +'"/>'+nameChannel+'</td></tr>' ;
+				// newTable='<input type="checkbox" id="myCheckbox" class="filled-in" /><label  for="myCheckbox"></label>'
+				newTable='<tr><td><input type="checkbox" id="'+ info.sources[i].id+'" name="'+ nameChannel +'" value="'+ info.sources[i].id +'"/> <label for="'+info.sources[i].id+'">'+nameChannel+'</label></td></tr>' ;
 				$("#box").append(newTable);
 			}
 			$('form').change(function(){
@@ -19,19 +20,19 @@ $(document).ready(function(){
 				$.each($("input[type='checkbox']:checked"), function(){
 					clicked.push($(this).val());
 				});
-				$('#image').empty();
+				$('.card').empty();
 				for(var k = 0; k<clicked.length; k++){
 					var indUrl= "https://newsapi.org/v1/articles?source="+clicked[k]+"&sortBy=top&apiKey=e90c70d754bc433e897fcb3c83336f02";
 					$.ajax({
 						url : indUrl,
 						success : function(main){
 							for(var j = 0; j < main.articles.length; j++){
-								var description = main.articles[j].description;i
+								var description = main.articles[j].description;
 								var image = main.articles[j].urlToImage;
-								var descriptionTable='<p class="col-md-10">' + description + '</p>';
-								var imageTable='<img src=' + image + ' class="col-md-2" width="100px" height="50px">';
-								$("#image").append(imageTable);
-								$("#image").append(descriptionTable);
+								var descriptionTable='<p class="card-content">' + description + '</p>';
+								var imageTable='<img src=' + image + ' class="card-image" width="100px" height="50px">';
+								var data = "<div class='newData'>"+imageTable+descriptionTable+"</div>"
+								$(".card").append(data);
 							}
 						}
 					});	
