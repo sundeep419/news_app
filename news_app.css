@@ -1,0 +1,22 @@
+/*#image{
+	width: 10px;
+	height: 10px;
+}*/
+h1{
+	color: red;
+}
+h4{
+	color: red;
+}
+#box{
+	color: black;
+	border: 1px solid orange;
+	border-width: 3px;
+	margin-left: 20px;
+}
+#selected{
+	color: black;
+	border: 1px solid orange;
+	border-width: 3px;
+	margin-left: 20px;
+}
