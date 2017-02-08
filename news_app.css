@@ -1,6 +1,9 @@
 #para{
 	color: orange;
-	font-size: 30px;
+	font-size: 1.5em;
+}
+.brand-logo{
+	color: #90caf9;
 }
 .newData{
 	display: block;
@@ -10,14 +13,24 @@
 h1{
 	color: red;
 }
-h4{
+h5{
+	font-size: 1.5em;
 	color: red;
 }
 #box{
 	color: black;
 	border: 1px solid orange;
 	border-width: 3px;
-	margin-left: 20px;
+	margin-left: 15px;
+}
+.logo{
+	text-align: center;
+	font-size: 4.5em;
+	font-weight: 100;
+}
+a:hover{
+	color: white;
+	text-decoration: none;
 }
 #selected{
 	color: black;

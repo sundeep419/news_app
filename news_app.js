@@ -20,7 +20,7 @@ $(document).ready(function(){
 				$.each($("input[type='checkbox']:checked"), function(){
 					clicked.push($(this).val());
 				});
-				$('.card').unshift();
+				$('.card').empty();
 				for(var k = 0; k<clicked.length; k++){
 					var indUrl= "https://newsapi.org/v1/articles?source="+clicked[k]+"&sortBy=top&apiKey=e90c70d754bc433e897fcb3c83336f02";
 					$.ajax({
@@ -30,9 +30,9 @@ $(document).ready(function(){
 								var description = main.articles[j].description;
 								var image = main.articles[j].urlToImage;
 								var descriptionTable='<p class="card-content">' + description + '</p>';
-								var imageTable='<img src=' + image + ' class="card-image" width="100px" height="50px">';
+								var imageTable='<img src=' + image + ' class="card-image" width="150px" height="150px">';
 								var data = "<div class='newData'>"+imageTable+descriptionTable+"</div>"
-								$(".card").append(data);
+								$('.card').append(data);
 							}
 						}
 					});	
